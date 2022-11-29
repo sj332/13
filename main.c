@@ -1,25 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-#define MAX_NAME	20
+#include<math.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-struct student{
-	int ID;
-	char name[10];
-	double grade;
+struct point{
+	int	x;
+	int y;
 };
 
 int main(int argc, char *argv[]) {
-	struct student hstudent1={1003,"JuyeopKim",4.3};
+	struct point p1,p2;
+	int xdiff,ydiff;
+	double dist;
 	
-	student1.ID=1020;
-	strcpy(student1.name,"KimJuyeop");
-	student1.grade=3.3;
+	printf("input p1 coordinate(x y): ");
+	scanf("%d %d", &p1.x,&p1.y);
 	
-	printf("ID:%i\n",student1.ID);
-	printf("name:%s\n",student1.name);
-	printf("grade:%1f",student1.grade);
+	printf("input p2 coordinate(x y): ");
+	scanf("%d %d", &p2.x,&p2.y);
+	
+	
+
+	//p1,p2 간 거리르 계싼, 출력
+	//math.hdml sqrt() 함수 사용 
+	//calculate xdiff
+	xdiff=p2.x-p1.x;
+	//ydiff
+	ydiff=p2.y-p1.y;
+	//피타고라스 정리 sqrt(xdiff^2+ydiff^2)
+	dist=sqrt(xdiff*xdiff+ydiff*ydiff);
+	
+	
+	printf("distance:%1f\n",dist);  
 	return 0;
 }
+
